@@ -1,5 +1,5 @@
 {% set name = "pysnmpcrypto" %}
-{% set version = "0.0.4" %}
+{% set version = "0.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pysnmpcrypto-{{ version }}.tar.gz
-  sha256: b635fb3b1ec6637b9a0033f50506214e16eb84574b1d25ab027bbde4caa55129
+  sha256: ee6819247ceee09aa2de54b998c51ccf595d75a9ccc2e303383b39a5ac63816c
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -16,11 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8,<4.0
+    - poetry-core >=1.0.0
     - pip
   run:
-    - python >=3.6
-    - cryptography
+    - python >=3.8.0,<4.0.0
+    - cryptography >=43.0.1
 
 test:
   imports:
