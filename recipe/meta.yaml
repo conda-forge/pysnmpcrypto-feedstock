@@ -16,11 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8,<4.0
+    - poetry-core >=1.0.0
     - pip
   run:
-    - python >=3.6
-    - cryptography
+    - python >=3.8.0,<4.0.0
+    - cryptography >=43.0.1
 
 test:
   imports:
